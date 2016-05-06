@@ -27,7 +27,8 @@ public class Item : MonoBehaviour {
         Earrings,
         Necklace,
         Rings,
-        Hands
+        Hands,
+		Drops
     }
 
     public Item(string name, int id, string desc, int power, int speed, int value, ItemType type)

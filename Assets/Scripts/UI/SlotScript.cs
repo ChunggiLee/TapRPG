@@ -47,7 +47,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 
     public void Click()
     {
-        Debug.Log("Clicked");
+       // Debug.Log("Clicked");
     }
 
     public void OnPointerDown(PointerEventData data)
@@ -68,24 +68,24 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 
         if (inventory.Items[slotNumber].itemName == null && inventory.draggingItem)
         {
-            Debug.Log("if before : " + inventory.Items[slotNumber].itemType);
+           // Debug.Log("if before : " + inventory.Items[slotNumber].itemType);
             Item.ItemType itemType = inventory.Items[slotNumber].itemType;
                 inventory.Items[slotNumber] = inventory.draggedItem;
                 inventory.CloseDraggedItem();
             inventory.Items[slotNumber].itemType = itemType;
-            Debug.Log("if after : " + inventory.Items[slotNumber].itemType);
+           // Debug.Log("if after : " + inventory.Items[slotNumber].itemType);
 
 
         }
         else if (inventory.draggingItem && inventory.Items[slotNumber].itemName != null) 
         {
-            Debug.Log("else before : " + inventory.Items[slotNumber].itemType);
+           // Debug.Log("else before : " + inventory.Items[slotNumber].itemType);
             Item.ItemType itemType = inventory.Items[slotNumber].itemType;
             inventory.Items[inventory.indexOfDraggedItem] = inventory.Items[slotNumber];
                 inventory.Items[slotNumber] = inventory.draggedItem;
                 inventory.CloseDraggedItem();
             inventory.Items[slotNumber].itemType = itemType;
-            Debug.Log("else after : " + inventory.Items[slotNumber].itemType);
+           // Debug.Log("else after : " + inventory.Items[slotNumber].itemType);
 
         }
         
@@ -93,7 +93,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 
     public void OnPointerEnter(PointerEventData data)
     {
-        Debug.Log("click : " + inventory.Items[slotNumber].itemType);
+       // Debug.Log("click : " + inventory.Items[slotNumber].itemType);
         if (inventory.Items[slotNumber].itemName != null && !inventory.draggingItem)
         {
             inventory.ShowToolTip(inventory.Slots[slotNumber].GetComponent<RectTransform>().localPosition, inventory.Items[slotNumber]);
@@ -110,7 +110,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 
     public void OnDrag(PointerEventData data)
     {
-        Debug.Log("Drag : " + inventory.Items[slotNumber].itemType);
+       // Debug.Log("Drag : " + inventory.Items[slotNumber].itemType);
         if (inventory.Items[slotNumber].itemType == Item.ItemType.Consumable)
         {
             inventory.Items[slotNumber].itemValue++;

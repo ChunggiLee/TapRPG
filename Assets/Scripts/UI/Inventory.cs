@@ -9,8 +9,8 @@ public class Inventory : MonoBehaviour
     public List<Item> Items = new List<Item>();
     public GameObject slots ;
     ItemDatabase database;
-    int x = -330;
-    int y = -360;
+    int x = -315;
+    int y = -330;
     public GameObject toolTip;
     public GameObject draggedItemGameObject;
     public bool draggingItem = false;
@@ -22,10 +22,6 @@ public class Inventory : MonoBehaviour
     int slotAmount = 0;
 
     public Vector3 Bar;
-
-    public float[] charSlotPosition = { -160f, -207f, 160f, -207f, 216f, 223f, -7.6f, -47f,
-        -1.14f, 273f, -1.14f, 433f, -216f, 160f, -216f, 433f, -216f, 160f, -216f, 355f, 216f, 433f, 1.17f, 113f };
-    // MainWeapon, SubWeapon, Glove, Shoes, Clothes, Head, LeftRing, RightRing, Necklace, Belt
 
     // Use this for initialization
     void Start()
@@ -50,17 +46,16 @@ public class Inventory : MonoBehaviour
                 x = x + 105;
                 if (k == 6)
                 {
-                    x = -330;
+                    x = -315;
                     y = y - 102;
                 }
                 slotAmount++;
             }
         }
 
-        addItem(0);
-        addItem(1);
-        addItem(2);
-        addItem(2);
+		for (int i = 0; i < database.size (); i++) {
+			addItem (i);
+		}
      
         CharacterSlotInit();
 
@@ -201,7 +196,7 @@ public class Inventory : MonoBehaviour
         
         rightRingSlot = GameObject.FindGameObjectWithTag("rightRingSlot");
         Items.Add(new Item( Item.ItemType.Rings));
-        rightRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount;
+        rightRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         necklaceSlot = GameObject.FindGameObjectWithTag("necklaceSlot");
         Items.Add(new Item( Item.ItemType.Necklace));
