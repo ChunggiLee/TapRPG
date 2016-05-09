@@ -15,12 +15,8 @@ public class PlayerManager : MonoBehaviour
 
 
     public int playerLevel;
-<<<<<<< HEAD
     public uint gold = 0;
     public uint earnedGold = 0;
-=======
-    public int gold = 0;
->>>>>>> 06680ea6e295e3ca0d9f04fee60f096c9aa23706
     public int a = 0;
     //weapon number
     //init
