@@ -24,7 +24,7 @@ public class MeleeMove : MonoBehaviour {
     private Transform staffWeapon;
     private Transform swordWeapon;
     private Transform wandWeapon;
-
+    private Transform shieldWeapon;
 
     private string axePath;
     private string bowPath;
@@ -36,6 +36,7 @@ public class MeleeMove : MonoBehaviour {
     private string staffPath;
     private string swordPath;
     private string wandPath;
+    private string shieldPath;
 
     void OnEnable()
     {
@@ -84,6 +85,7 @@ public class MeleeMove : MonoBehaviour {
         staffPath= "Weapon/Staff/Staff" + playerManager.a.ToString();
         swordPath= "Weapon/Sword/Sword" + playerManager.a.ToString();
         wandPath= "Weapon/Wand/Wand" + playerManager.a.ToString();
+        shieldPath= "Weapon/Shield/Shield" + playerManager.a.ToString();
 
 
         axeWeapon= my.FindChild("Brandish").FindChild("Axe");
@@ -96,6 +98,7 @@ public class MeleeMove : MonoBehaviour {
         staffWeapon= my.FindChild("Brandish").FindChild("Staff");
         swordWeapon= my.FindChild("Brandish").FindChild("Sword");
         wandWeapon= my.FindChild("Brandish").FindChild("Wand");
+        shieldWeapon= my.FindChild("Brandish").FindChild("Shield");
 
 
 
@@ -119,7 +122,8 @@ public class MeleeMove : MonoBehaviour {
             Resources.Load<Sprite>(swordPath);
         wandWeapon.GetComponent<SpriteRenderer>().sprite =
             Resources.Load<Sprite>(wandPath);
-
+        shieldWeapon.GetComponent<SpriteRenderer>().sprite =
+            Resources.Load<Sprite>(shieldPath);
 
 
         axeWeapon.gameObject.SetActive(false);
@@ -132,7 +136,7 @@ public class MeleeMove : MonoBehaviour {
         staffWeapon.gameObject.SetActive(false);
         swordWeapon.gameObject.SetActive(false);
         wandWeapon.gameObject.SetActive(false);
-
+        shieldWeapon.gameObject.SetActive(false);
 
 
         if (playerManager.wState == WeaponState.axe)
@@ -175,7 +179,10 @@ public class MeleeMove : MonoBehaviour {
         {
             wandWeapon.gameObject.SetActive(true);
         }
-
+        else if (playerManager.wState == WeaponState.shield)
+        {
+            shieldWeapon.gameObject.SetActive(true);
+        }
 
 
     }

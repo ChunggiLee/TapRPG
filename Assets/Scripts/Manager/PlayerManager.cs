@@ -11,16 +11,17 @@ public class PlayerManager : MonoBehaviour
     public GameObject bullet;
     public GameObject weapon;
     public float player_BaseDamage = 10.0f;
-    public float attackSpeed= 0.8f;
+    public float attackSpeed = 0.8f;
 
 
     public int playerLevel;
     public int gold = 0;
-    public int a =0; //weapon number
+    public int a = 0;
+    //weapon number
     //init
 
 
-     void OnEnable()
+    void OnEnable()
     {
 //        bullet = GameObject.FindGameObjectWithTag("Bullet") as GameObject;
 //        for (int i = 0; i < bullets.Length; i++)
@@ -35,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetMouseButton(0)||Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0))
             {
 
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -79,7 +80,7 @@ public class PlayerManager : MonoBehaviour
 
             }
 
-            yield return new WaitForSeconds (1/attackSpeed); 
+            yield return new WaitForSeconds(1 / attackSpeed); 
         }
 
 
@@ -89,53 +90,7 @@ public class PlayerManager : MonoBehaviour
  
 
 
-//     void Update()
-//    {
-//        //Raycasthit 2D: Player InPut
-//        if (Input.GetMouseButton(0))
-//        {
-//            
-//            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//            Vector3 clickPos = pos;
-//            Ray2D ray = new Ray2D(pos, Vector2.zero);
-//            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 15.0f);
-//           
-//            if (hit.collider)
-//            {
-//                monsterFSM = hit.collider.GetComponent <MonsterFSM>();
-//                if (isMelee)
-//                {
-//                    
-//                    meleeAttack(clickPos);
-//
-//                }
-//                else
-//                {
-//                    rangeAttack(clickPos);
-//                }
-//
-//            }
-//            else if (isMelee)
-//            {
-//                meleeAttack(clickPos);
-//            }
-//            else if (!isMelee)
-//            {
-//                rangeAttack(clickPos);
-//
-//            }
-//
-//           // a++;
-//            if (a > 36)
-//            {
-//                a = 1;
-//
-//            } 
-//
-//
-//        }
-//
-//      }
+
 
   
 
@@ -144,7 +99,7 @@ public class PlayerManager : MonoBehaviour
     //attackprocess
     public void meleeAttack(Vector3 _pos)
     {
-        Instantiate(weapon,_pos,Quaternion.Euler(0,0,0));
+        Instantiate(weapon, _pos, Quaternion.Euler(0, 0, 0));
 
 
     }
