@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MainMenu.unity
+=======
+- path: Assets/Scenes/test_gamelogic.unity
+>>>>>>> 06680ea6e295e3ca0d9f04fee60f096c9aa23706
   isLoaded: 1
   isActive: 1
