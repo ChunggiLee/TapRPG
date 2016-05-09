@@ -13,7 +13,7 @@ public class MonsterFSM : FSMBase
     public float feature2;
     public float currentSP = 0.0f;
     public float maxSP=1.5f;
-    public bool isDead = false;
+    public bool isKilled = false;
     public bool isSplit;
     public int monsterLevel =10;//edit
     public string monsterName;
@@ -64,10 +64,10 @@ public class MonsterFSM : FSMBase
             monsterName = monsterName + "Split";
         }
         currentHp = maxHp;
-        moveSpeed = _monsterData.moveSpeed / (elite * elite);
+        moveSpeed = _monsterData.moveSpeed;//(elite);
         feature1 = _monsterData.feature1;
         feature2 = _monsterData.feature2;
-
+        KnockbackTime /= elite;
         my.localScale *= elite;
         KnockbackTime /= (elite * elite);
         if (elite >= 3)
@@ -284,7 +284,7 @@ public class MonsterFSM : FSMBase
         {
             isInvincible = true;
             monsterSprite.color = new Color(0.3f, 0.3f, 0.8f, 0.8f);
-            currentSP = (maxSP/3)*2;
+            currentSP = (maxSP*2/3);
 
 
         }
@@ -339,6 +339,7 @@ public class MonsterFSM : FSMBase
         {
             if (currentHp <= 0)
             {
+                isKilled = true;
                 SetState(CharacterState.Dead);
 
             }
