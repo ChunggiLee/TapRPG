@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CSV\CSVReader.cs" />
+     <Compile Include="Assets\Scripts\CSV\ItemData.cs" />
      <Compile Include="Assets\Scripts\CSV\MonsterData.cs" />
      <Compile Include="Assets\Scripts\CSV\PlayerData.cs" />
      <Compile Include="Assets\Scripts\CSV\ReadData.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\Manager\SkillManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Manager\StageManager.cs" />
+     <Compile Include="Assets\Scripts\UI\CharacterStateHUD.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
      <Compile Include="Assets\Scripts\UI\Item.cs" />
      <Compile Include="Assets\Scripts\UI\ItemDatabase.cs" />
@@ -72,7 +74,6 @@
      <Compile Include="Assets\Scripts\UI\MainToGameButton.cs" />
      <Compile Include="Assets\Scripts\UI\MonsterHUD.cs" />
      <Compile Include="Assets\Scripts\UI\SlotScript.cs" />
-     <Compile Include="Assets\Scripts\UI\UIClick.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
