@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public KillZone killZone;
     public GameObject gameOver;
 
+    public bool isGameOver=false;
+
 
     void OnEnable()
     {
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
 
             aliveMonsters = GameObject.FindGameObjectsWithTag("Monster");
 
-            if (aliveMonsters.Length == 0)
+            if (aliveMonsters.Length == 0&&isGameOver==false)
             {
                 yield return new WaitForSeconds(1.5f);
                 stageManager.CreateStage();
@@ -50,7 +52,11 @@ public class GameManager : MonoBehaviour
     {
         if (killZone.killZoneNum >= 10 )
         {
-           
+            for (int i = 0; i < aliveMonsters.Length; i++)
+            {
+                aliveMonsters[i].SetActive(false);
+            }
+            isGameOver = true;
             gameOver.SetActive(true);
 
            

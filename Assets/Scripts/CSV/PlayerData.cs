@@ -3,18 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class PlayerData : ScriptableObject {
+public class PlayerData : ScriptableObject
+{
     [System.Serializable]
     public class Attribute
     {
-        public int level;
         public int gold;
-        public int maxHP;
+        public int baseHp;
         public float baseAttack;
-        public int reqExp;
-        public float BulletmoveSpeed = 3f;
-        public float BulletturnSpeed = 360f;
-        public float attackRange = 1.5f;
+        public float baseCriticalChance;
+        public float baseCriticalHit;
+        public float baseAttackSpeed;
+
+        //items
+        public int itemHP;
+        public float itemAttack;
+        public float itemCriticalChance;
+        public float itemCriticalHit;
+        public float itemAttackSpeed;
+        public float itemBulletSpeed = 3f;
+        public int itemBulletCol = 0;
+
+        //monster
+
     }
 
     public List<Attribute> list = new List<Attribute>();

@@ -12,15 +12,12 @@ public class PlayerManager : MonoBehaviour
     public GameObject weapon;
     public float player_BaseDamage = 10.0f;
     public float attackSpeed = 0.8f;
-
+    public float killedMonster=0;
 
     public int playerLevel;
-<<<<<<< HEAD
     public uint gold = 0;
     public uint earnedGold = 0;
-=======
-    public int gold = 0;
->>>>>>> 06680ea6e295e3ca0d9f04fee60f096c9aa23706
+
     public int a = 0;
     //weapon number
     //init
@@ -75,9 +72,9 @@ public class PlayerManager : MonoBehaviour
                 }
 
                 // a++;
-                if (a > 36)
+                if (a > 42)
                 {
-                    a = 1;
+                    a = 42;
 
                 } 
 
