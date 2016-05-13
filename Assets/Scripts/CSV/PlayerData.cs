@@ -21,7 +21,7 @@ public class PlayerData : ScriptableObject
         public float itemCriticalChance;
         public float itemCriticalHit;
         public float itemAttackSpeed;
-        public float itemBulletSpeed = 3f;
+        public float itemBulletSpeed = 5f;
         public int itemBulletCol = 0;
 
         //monster
