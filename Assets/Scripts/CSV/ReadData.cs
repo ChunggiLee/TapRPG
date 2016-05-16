@@ -9,6 +9,8 @@ public class ReadData: AssetPostprocessor
     static readonly string playerExportPath = "Assets/Resources/Data/PlayerData.asset";
     static readonly string monsterExportPath = "Assets/Resources/Data/MonsterData.asset";
     static readonly string stageExportPath = "Assets/Resources/Data/StageData.asset";
+	static readonly string weaponExportPath = "Assets/Resources/Data/WeaponData.asset";
+	static readonly string equipmentExportPath = "Assets/Resources/Data/EquipmentData.asset";
     static readonly string resultResourcePath = "Assets/Resources/Data/";
 
 
@@ -26,6 +28,8 @@ public class ReadData: AssetPostprocessor
         MakePlayerData();
         MakeMonsterData();
         MakeStageData();
+		MakeWeaponData ();
+		MakeEquipmentData ();
 
         Debug.Log("Excel data covert complete.");
     }
@@ -148,5 +152,102 @@ public class ReadData: AssetPostprocessor
         //디스크에 쓰기
         EditorUtility.SetDirty(obj);
     }
+
+	/// <summary>
+	/// 주인공 정보를 ScriptableObject만듬
+	/// </summary>
+	static void MakeWeaponData()
+	{
+		//SciprtableObject를 생성
+		WeaponData data = ScriptableObject.CreateInstance<WeaponData>();
+		//ScriptableObject를 파일로 만듬
+		AssetDatabase.CreateAsset((ScriptableObject)data, weaponExportPath);
+		//수정 불가능하게 설정(에디터에서 수정 하게 하려면 주석처리)
+		data.hideFlags = HideFlags.NotEditable;
+
+		//자료를 삭제(초기화)
+		data.list.Clear();
+
+		//CSVRead
+		List<Dictionary<string,object>> csvData = CSVReader.Read("CSV/Weapon");
+
+		for (int i = 0; i < csvData.Count; i++)
+		{
+			WeaponData.Attribute temp = new WeaponData.Attribute();
+			// ItemNo, Type, isMelee , feature,itemHP itemDamage  itemCriticalChance itemCriticalHit 
+			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
+			temp.itemNo = (string)csvData[i]["ItemNo"];
+			temp.itemType = (string)csvData[i]["Type"];
+			temp.isMelee = (bool)csvData[i]["isMelee"];
+			temp.feature = (string)csvData[i]["feature"];
+			temp.itemHP = (int)csvData[i]["itemHP"];
+			temp.itemDamage = (int)csvData[i]["itemDamage"];
+			temp.itemCriticalChance = (float)csvData[i]["itemCriticalChance"];
+			temp.itemCriticalHit = (float)csvData[i]["itemCriticalHit"];
+			temp.itemAttackSpeed = (float)csvData[i]["itemAttackSpeed"];
+			temp.slot1 = (string)csvData [i] ["Slot1"];
+			temp.value1 = (string)csvData [i] ["Velue1"];
+			temp.slot2 = (string)csvData [i] ["Slot2"];
+			temp.value2 = (string)csvData [i] ["Velue2"];
+
+
+			data.list.Add(temp);
+
+		}
+		//위에서 생성된 SciprtableObject의 파일을 찾음
+		ScriptableObject obj =
+			AssetDatabase.LoadAssetAtPath(weaponExportPath, typeof(ScriptableObject)) as ScriptableObject;
+		//디스크에 쓰기
+		EditorUtility.SetDirty(obj);
+	}
+
+	/// <summary>
+	/// 주인공 정보를 ScriptableObject만듬
+	/// </summary>
+	static void MakeEquipmentData()
+	{
+		//SciprtableObject를 생성
+		EquipmentData data = ScriptableObject.CreateInstance<EquipmentData>();
+		//ScriptableObject를 파일로 만듬
+		AssetDatabase.CreateAsset((ScriptableObject)data, equipmentExportPath);
+		//수정 불가능하게 설정(에디터에서 수정 하게 하려면 주석처리)
+		data.hideFlags = HideFlags.NotEditable;
+
+		//자료를 삭제(초기화)
+		data.list.Clear();
+
+		//CSVRead
+		List<Dictionary<string,object>> csvData = CSVReader.Read("CSV/Equipment");
+
+		for (int i = 0; i < csvData.Count; i++)
+		{
+			EquipmentData.Attribute temp = new EquipmentData.Attribute();
+			// ItemNo, Type, isMelee , feature,itemHP itemDamage  itemCriticalChance itemCriticalHit 
+			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
+			temp.itemNo = (string)csvData[i]["ItemNo"];
+			temp.itemType = (string)csvData[i]["Type"];
+			temp.isMelee = (bool)csvData[i]["isMelee"];
+			temp.feature = (string)csvData[i]["feature"];
+			temp.itemHP = (int)csvData[i]["itemHP"];
+			temp.itemDamage = (int)csvData[i]["itemDamage"];
+			temp.itemCriticalChance = (float)csvData[i]["itemCriticalChance"];
+			temp.itemCriticalHit = (float)csvData[i]["itemCriticalHit"];
+			temp.itemAttackSpeed = (float)csvData[i]["itemAttackSpeed"];
+			temp.slot1 = (string)csvData [i] ["Slot1"];
+			temp.value1 = (string)csvData [i] ["Velue1"];
+			temp.slot2 = (string)csvData [i] ["Slot2"];
+			temp.value2 = (string)csvData [i] ["Velue2"];
+
+			data.list.Add(temp);
+
+		}
+
+		//위에서 생성된 SciprtableObject의 파일을 찾음
+		ScriptableObject obj =
+			AssetDatabase.LoadAssetAtPath(equipmentExportPath, typeof(ScriptableObject)) as ScriptableObject;
+		//디스크에 쓰기
+		EditorUtility.SetDirty(obj);
+	}
+
 
 }

@@ -3,13 +3,15 @@ using System.Collections;
  
 public class SaveManager : MonoBehaviour 
 {
-	    /*int currentScore;
+	    int currentScore;
 	    int highScore;
 	 
 	    string currentPlayerName;
 	    string highScorePlayerName;
+
+		public WeaponData.Attribute _weaponData;
 	 
-	    void SaveData()
+	   /* void SaveData()
 	    {
 		        // 이런식으로 스트링키를 이용해서 값을 저장해줍니다.
 		        PlayerPrefs.SetInt("Score", currentScore);

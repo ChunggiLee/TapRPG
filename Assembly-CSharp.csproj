@@ -46,11 +46,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CSV\CSVReader.cs" />
-     <Compile Include="Assets\Scripts\CSV\ItemData.cs" />
+     <Compile Include="Assets\Scripts\CSV\EquipmentData.cs" />
      <Compile Include="Assets\Scripts\CSV\MonsterData.cs" />
      <Compile Include="Assets\Scripts\CSV\PlayerData.cs" />
      <Compile Include="Assets\Scripts\CSV\ReadData.cs" />
      <Compile Include="Assets\Scripts\CSV\StageData.cs" />
+     <Compile Include="Assets\Scripts\CSV\WeaponData.cs" />
      <Compile Include="Assets\Scripts\Game\BulletMove.cs" />
      <Compile Include="Assets\Scripts\Game\FSMBase.cs" />
      <Compile Include="Assets\Scripts\Game\HomingMove.cs" />
