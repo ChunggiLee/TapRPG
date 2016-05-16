@@ -83,9 +83,10 @@ public class BulletMove : MonoBehaviour
             starBullet.transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
         }
         view = Camera.main.WorldToViewportPoint(my.position);
-        if (view.y > 1.2f || view.y < -0.8f||view.x > 1.2f||view.x<-0.8f)
+        if (view.y > 1.2f || view.y < -0.5f||view.x > 1.2f||view.x<-0.5f)
         {
-            currentTime += Time.deltaTime;
+            currentTime = bulletLifeTime;
+            // currentTime += Time.deltaTime;
             if (bulletLifeTime <= currentTime)
             {
                 gameObject.SetActive(false);

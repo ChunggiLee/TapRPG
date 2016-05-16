@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CSV/PlayerData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/BulletMove.cs">
     <Files>
-      <File FileName="Assets/Scripts/CSV/PlayerData.cs" Line="32" Column="2" />
-      <File FileName="Assets/Scripts/Manager/PlayerManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CSV/PlayerData.cs" Line="15" Column="5" />
+      <File FileName="Assets/Scripts/Manager/PlayerManager.cs" Line="45" Column="24" />
       <File FileName="Assets/Scripts/Manager/GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Loading.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/ItemDatabase.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/BulletMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/BulletMove.cs" Line="86" Column="72" />
       <File FileName="Assets/Scripts/Manager/SkillManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Manager/SaveManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/FSMBase.cs" Line="1" Column="1" />
@@ -16,10 +16,10 @@
       <File FileName="Assets/Scripts/Game/PlayerBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/KillZone.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Manager/SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Manager/DataManager.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Manager/DataManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/MainToGameButton.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/MeleeMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/HomingMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/HomingMove.cs" Line="34" Column="1" />
       <File FileName="Assets/Scripts/UI/Inventory.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Item.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/SlotScript.cs" Line="1" Column="1" />

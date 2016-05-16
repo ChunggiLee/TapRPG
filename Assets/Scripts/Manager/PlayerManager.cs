@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     public bool isMelee = false;
     public bool isHoming = false;
     public MonsterFSM monsterFSM;
-    public GameObject[] bullets = new GameObject[50];
+    public GameObject[] bullets;
     public GameObject bullet;
     public GameObject weapon;
     public float player_BaseDamage = 10.0f;
@@ -81,6 +81,9 @@ public class PlayerManager : MonoBehaviour
 
 
             }
+
+            bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
 
             yield return new WaitForSeconds(1 / attackSpeed); 
         }
