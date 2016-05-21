@@ -20,9 +20,9 @@ public class EquipmentData : ScriptableObject {
 		public float itemCriticalHit;
 		public float itemAttackSpeed;
 		public string slot1;
-		public string value1;
+		public int value1;
 		public string slot2;
-		public string value2;
+		public int value2;
 	}
 
 	public List<Attribute> list = new List<Attribute>();

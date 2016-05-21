@@ -31,9 +31,9 @@ public class Inventory : MonoBehaviour
         // toolTip = GameObject.FindGameObjectWithTag("ToolTip").GetComponent<GameObject>();
         //draggedItemGameObject = GameObject.FindGameObjectWithTag("droppedItemIcon").GetComponent<GameObject>();
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 0; i++)
         {
-            for (int k = 0; k < 7; k++)
+            for (int k = 0; k < 0; k++)
             {
                 GameObject slot = (GameObject)Instantiate(slots);
                 slot.GetComponent<SlotScript>().slotNumber = slotAmount;

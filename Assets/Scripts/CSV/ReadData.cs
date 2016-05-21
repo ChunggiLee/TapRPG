@@ -82,7 +82,7 @@ public class ReadData: AssetPostprocessor
         {
             MonsterData.Attribute temp = new MonsterData.Attribute();
             //여기에 추가Name,stage,no,maxHP,moveSpeed,ave,feature1,feature2
-            temp.name = (string)csvData[i]["Name"];
+            temp.name = (string)csvData[i]["name"];
             temp.stage = (int)csvData[i]["stage"];
             temp.no = (int)csvData[i]["no"];
             temp.maxHP = (int)csvData[i]["maxHP"];
@@ -178,17 +178,17 @@ public class ReadData: AssetPostprocessor
 			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
 			temp.itemNo = (string)csvData[i]["ItemNo"];
 			temp.itemType = (string)csvData[i]["Type"];
-			temp.isMelee = (bool)csvData[i]["isMelee"];
-			temp.feature = (string)csvData[i]["feature"];
+			temp.isMelee = (string)csvData[i]["isMelee"];
+			temp.feature = (string)csvData[i]["Feature"];
 			temp.itemHP = (int)csvData[i]["itemHP"];
 			temp.itemDamage = (int)csvData[i]["itemDamage"];
 			temp.itemCriticalChance = (float)csvData[i]["itemCriticalChance"];
 			temp.itemCriticalHit = (float)csvData[i]["itemCriticalHit"];
 			temp.itemAttackSpeed = (float)csvData[i]["itemAttackSpeed"];
 			temp.slot1 = (string)csvData [i] ["Slot1"];
-			temp.value1 = (string)csvData [i] ["Velue1"];
+			temp.value1 = (int)csvData [i] ["Velue1"];
 			temp.slot2 = (string)csvData [i] ["Slot2"];
-			temp.value2 = (string)csvData [i] ["Velue2"];
+			temp.value2 = (int)csvData [i] ["Velue2"];
 
 
 			data.list.Add(temp);
@@ -226,17 +226,17 @@ public class ReadData: AssetPostprocessor
 			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
 			temp.itemNo = (string)csvData[i]["ItemNo"];
 			temp.itemType = (string)csvData[i]["Type"];
-			temp.isMelee = (bool)csvData[i]["isMelee"];
-			temp.feature = (string)csvData[i]["feature"];
+			//temp.isMelee = (bool)csvData[i]["isMelee"];
+			temp.feature = (string)csvData[i]["Feature"];
 			temp.itemHP = (int)csvData[i]["itemHP"];
 			temp.itemDamage = (int)csvData[i]["itemDamage"];
 			temp.itemCriticalChance = (float)csvData[i]["itemCriticalChance"];
 			temp.itemCriticalHit = (float)csvData[i]["itemCriticalHit"];
 			temp.itemAttackSpeed = (float)csvData[i]["itemAttackSpeed"];
 			temp.slot1 = (string)csvData [i] ["Slot1"];
-			temp.value1 = (string)csvData [i] ["Velue1"];
+			temp.value1 = (int)csvData [i] ["Velue1"];
 			temp.slot2 = (string)csvData [i] ["Slot2"];
-			temp.value2 = (string)csvData [i] ["Velue2"];
+			temp.value2 = (int)csvData [i] ["Velue2"];
 
 			data.list.Add(temp);
 
