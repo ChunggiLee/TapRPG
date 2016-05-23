@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class SlotList : MonoBehaviour {
 
 	public List<GameObject> Slots = new List<GameObject>();
-	public List<Item> Items = new List<Item>();
+	public List<ItemClass> Items = new List<ItemClass>();
 	public GameObject slots ;
 	public GameObject Content;
 	ItemDatabase database;
+
+	public GameObject headSlot, clotheSlot, beltSlot, shoesSlot,
+	handsSlot, mainWeaponSlot, subWeaponSlot, leftRingSlot, 
+	rightRingSlot, necklaceSlot;
 
 	int x = 0;
 	int y = 0;
@@ -18,7 +22,7 @@ public class SlotList : MonoBehaviour {
 	int listNum = 20; // Use to modify ListUI height
 	int [] spriteNum = new int[10] ; // Store sprite image number
 	string [] pathArr = new string[10]; // Store each path
-	int jNum = 1; // Store _weaponData list initial value
+	public int jNum = 1; // Store _weaponData list initial value
 
 	public string spritePath; // Assign each path
 
@@ -28,7 +32,7 @@ public class SlotList : MonoBehaviour {
 	public string bowPath = "Weapon/Bow/Bow";
 	public string clawPath = "Weapon/Claw/Claw";
 	public string daggerPath = "Weapon/Dagger/Dagger";
-	public string katerPath = "Weapon/Kater/Kater";
+	public string katarPath = "Weapon/Katar/Katar";
 	public string macePath = "Weapon/Mace/Mace";
 	public string shieldPath = "Weapon/Shield/Shield";
 	public string spearPath = "Weapon/Spear/Spear";
@@ -51,7 +55,7 @@ public class SlotList : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
+		//database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
 		// toolTip = GameObject.FindGameObjectWithTag("ToolTip").GetComponent<GameObject>();
 		//draggedItemGameObject = GameObject.FindGameObjectWithTag("droppedItemIcon").GetComponent<GameObject>();
 
@@ -74,6 +78,7 @@ public class SlotList : MonoBehaviour {
 			
 		Slots.Clear(); // Clear all element
 		Items.Clear();
+		Content.GetComponent<RectTransform> ().localPosition = new Vector3 (0, 0, 1);
 		Content.GetComponent<RectTransform> ().sizeDelta = new Vector3(790, 350 * (listNum / 3.5f), 1); // Modify ListUI height
 		int count = 0;
 		for (int i = 1, j = jNum; i <= spriteNum[count] && j != 382; i++, j++) // i means image number, j means dataList number
@@ -90,9 +95,11 @@ public class SlotList : MonoBehaviour {
 			}
 
 			GameObject slot = (GameObject)Instantiate(slots); // Make slot(item) list
+			//GameObject itemButton;
 			slot.GetComponent<Slot>().slotNumber = slotAmount;
+			slot.gameObject.transform.GetChild (2).GetComponent<ClickButton> ().itemNumber = slotAmount;
+			//itemButton.GetComponent<ClickButton> ().itemNumber = slotAmount;
 			Slots.Add(slot);
-			Items.Add(new Item(Item.ItemType.All));
 			slot.transform.parent = this.gameObject.transform;
 			slot.name = "slot" + i;
 			slot.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(spritePath+i);
@@ -100,10 +107,15 @@ public class SlotList : MonoBehaviour {
 			if (type == "weapon") { // Check weapon or equipment data
 				_weaponData = DataManager.Instance.weaponData.list [j-1];
 				slot.gameObject.transform.GetChild (1).GetComponent<Text> ().text = _weaponData.itemNo;
+				ItemClass item = new ItemClass (_weaponData.type, spritePath+i);
+				Items.Add (item);
+				//Debug.Log (Items.Add[i]);
 			} else {
 				_equipmentData = DataManager.Instance.equipmentData.list [j-1];
 				slot.gameObject.transform.GetChild (1).GetComponent<Text> ().text = _equipmentData.itemNo;
+				Items.Add(new ItemClass(_equipmentData.type, spritePath+i));
 			}
+			//Debug.Log (Items [0].itemType);
 			slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 			slot.GetComponent<RectTransform>().localPosition = new Vector3(x, y, 0);
 			y -= 105;
@@ -145,13 +157,15 @@ public class SlotList : MonoBehaviour {
 		spriteNum [4] = 37;
 		spriteNum [5] = 31;
 
-		pathArr [0] = katerPath;
+		pathArr [0] = katarPath;
 		pathArr [1] = macePath;
 		pathArr [2] = spearPath;
 		pathArr [3] = staffPath;
 		pathArr [4] = swordPath;
 		pathArr [5] = wandPath;
 		ListClick ("weapon");
+
+
 
 	}
 
@@ -243,5 +257,51 @@ public class SlotList : MonoBehaviour {
 		for (int i = 0; i < 10; i++) {
 			spriteNum [i] = 0;
 		}
+		slotAmount = 0;
 	}
+
+	public void CharacterSlotInit()
+	{
+		headSlot = GameObject.FindGameObjectWithTag("headSlot");
+		Items.Add(new ItemClass("helmat"));
+		//headSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		clotheSlot = GameObject.FindGameObjectWithTag("clotheSlot");
+		Items.Add (new ItemClass ("armor"));
+		//clotheSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		beltSlot = GameObject.FindGameObjectWithTag("beltSlot");
+		Items.Add(new ItemClass(""));
+		//beltSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		shoesSlot = GameObject.FindGameObjectWithTag("shoesSlot");
+		Items.Add(new ItemClass("boot"));
+		//shoesSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		handsSlot = GameObject.FindGameObjectWithTag("handsSlot");
+		Items.Add(new ItemClass("glove"));
+		//handsSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		mainWeaponSlot = GameObject.FindGameObjectWithTag("mainWeaponSlot");
+		Items.Add(new ItemClass("weapon"));
+		//mainWeaponSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		subWeaponSlot = GameObject.FindGameObjectWithTag("subWeaponSlot");
+		Items.Add(new ItemClass("weapon"));
+		//subWeaponSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		leftRingSlot = GameObject.FindGameObjectWithTag("leftRingSlot");
+		Items.Add(new ItemClass("ring"));
+		//leftRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		rightRingSlot = GameObject.FindGameObjectWithTag("rightRingSlot");
+		Items.Add(new ItemClass("ring"));
+		//rightRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
+
+		necklaceSlot = GameObject.FindGameObjectWithTag("necklaceSlot");
+		Items.Add(new ItemClass("accessory"));
+		//necklaceSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount;
+
+	}
+
 }

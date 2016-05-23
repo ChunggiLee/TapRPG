@@ -13,6 +13,7 @@ public class Item : MonoBehaviour {
     public int itemValue;
     public ItemType itemType;
     public Item item;
+	public string type;
 
     public enum ItemType
     {
@@ -48,10 +49,10 @@ public class Item : MonoBehaviour {
         
     }
 
-    public Item(Item.ItemType type)
+    /*public Item(Item.ItemType type)
     {
         itemType = type;
-    }
+    }*/
 
     public Item(Item copyItem)
     {
@@ -62,4 +63,9 @@ public class Item : MonoBehaviour {
     {
         return new Item(item);
     }
+
+	public Item(string type)
+	{
+		type = type;
+	}
 }

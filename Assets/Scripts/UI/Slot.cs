@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour {
+public class Slot : MonoBehaviour{
 
 	public Item item; 
 	Image itemImage;
@@ -19,6 +20,7 @@ public class Slot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		 
 	}
+
 }

@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
                 GameObject slot = (GameObject)Instantiate(slots);
                 slot.GetComponent<SlotScript>().slotNumber = slotAmount;
                 Slots.Add(slot);
-                Items.Add(new Item(Item.ItemType.All));
+                //Items.Add(new Item());
                 slot.transform.parent = this.gameObject.transform;
                 slot.name = "slot" + i + "." + k;
                 slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
@@ -149,7 +149,7 @@ public class Inventory : MonoBehaviour
         draggingItem = true;
         draggedItemGameObject.GetComponent<Image>().sprite = item.itemIcon;
         Debug.Log("change show" + item.itemType);
-        Items[indexOfDraggedItem].itemType = itemType;
+		Items[indexOfDraggedItem].itemType = itemType;
 
     }
 
@@ -163,43 +163,43 @@ public class Inventory : MonoBehaviour
     {
         characterSlotAmount = slotAmount;
         headSlot = GameObject.FindGameObjectWithTag("headSlot");
-        Items.Add(new Item( Item.ItemType.Head));
+        Items.Add(new Item("helmat"));
         headSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
 
         clotheSlot = GameObject.FindGameObjectWithTag("clotheSlot");
-        Items.Add(new Item( Item.ItemType.Clothes));
+		Items.Add (new Item ("armor"));
         clotheSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         beltSlot = GameObject.FindGameObjectWithTag("beltSlot");
-        Items.Add(new Item(Item.ItemType.Belt));
+        Items.Add(new Item(""));
         beltSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         shoesSlot = GameObject.FindGameObjectWithTag("shoesSlot");
-        Items.Add(new Item( Item.ItemType.Shoes));
+        Items.Add(new Item("boot"));
         shoesSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         handsSlot = GameObject.FindGameObjectWithTag("handsSlot");
-        Items.Add(new Item( Item.ItemType.Hands));
+        Items.Add(new Item("glove"));
         handsSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         mainWeaponSlot = GameObject.FindGameObjectWithTag("mainWeaponSlot");
-        Items.Add(new Item( Item.ItemType.Weapon));
+        Items.Add(new Item("weapon"));
         mainWeaponSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         subWeaponSlot = GameObject.FindGameObjectWithTag("subWeaponSlot");
-        Items.Add(new Item( Item.ItemType.Weapon));
+        Items.Add(new Item("weapon"));
         subWeaponSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         leftRingSlot = GameObject.FindGameObjectWithTag("leftRingSlot");
-        Items.Add(new Item( Item.ItemType.Rings));
+        Items.Add(new Item("ring"));
         leftRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         rightRingSlot = GameObject.FindGameObjectWithTag("rightRingSlot");
-        Items.Add(new Item( Item.ItemType.Rings));
+		Items.Add(new Item("ring"));
         rightRingSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount++;
         
         necklaceSlot = GameObject.FindGameObjectWithTag("necklaceSlot");
-        Items.Add(new Item( Item.ItemType.Necklace));
+		Items.Add(new Item("accessory"));
         necklaceSlot.GetComponent<SlotScript>().slotNumber = characterSlotAmount;
 
     }

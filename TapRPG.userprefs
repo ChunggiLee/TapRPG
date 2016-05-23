@@ -18,21 +18,23 @@
       <File FileName="Assets/Scripts/CSV/StageData.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CSV/WeaponData.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/MonsterHUD.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Item.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Item.cs" Line="28" Column="18" />
       <File FileName="Assets/Scripts/Manager/StageManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Manager/SkillManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Manager/SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Inventory.cs" Line="143" Column="1" />
       <File FileName="Assets/Scripts/UI/MainToGameButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/SlotScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Slot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/SlotList.cs" Line="225" Column="21" />
+      <File FileName="Assets/Scripts/UI/SlotScript.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/UI/Slot.cs" Line="17" Column="70" />
+      <File FileName="Assets/Scripts/UI/SlotList.cs" Line="81" Column="80" />
       <File FileName="Assets/Scripts/Game/BulletMove.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/KillZone.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/PlayerBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/MonsterFSM.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/HomingMove.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/MeleeMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/ClickButton.cs" Line="74" Column="21" />
+      <File FileName="Assets/Scripts/UI/ItemClass.cs" Line="7" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

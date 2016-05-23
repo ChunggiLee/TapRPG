@@ -177,7 +177,7 @@ public class ReadData: AssetPostprocessor
 			// ItemNo, Type, isMelee , feature,itemHP itemDamage  itemCriticalChance itemCriticalHit 
 			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
 			temp.itemNo = (string)csvData[i]["ItemNo"];
-			temp.itemType = (string)csvData[i]["Type"];
+			temp.type = (string)csvData[i]["Type"];
 			temp.isMelee = (string)csvData[i]["isMelee"];
 			temp.feature = (string)csvData[i]["Feature"];
 			temp.itemHP = (int)csvData[i]["itemHP"];
@@ -225,7 +225,7 @@ public class ReadData: AssetPostprocessor
 			// ItemNo, Type, isMelee , feature,itemHP itemDamage  itemCriticalChance itemCriticalHit 
 			// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
 			temp.itemNo = (string)csvData[i]["ItemNo"];
-			temp.itemType = (string)csvData[i]["Type"];
+			temp.type = (string)csvData[i]["Type"];
 			//temp.isMelee = (bool)csvData[i]["isMelee"];
 			temp.feature = (string)csvData[i]["Feature"];
 			temp.itemHP = (int)csvData[i]["itemHP"];

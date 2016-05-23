@@ -11,7 +11,7 @@ public class EquipmentData : ScriptableObject {
 		// itemAttackSpeed  Slot1  Velue1 Slot2  Velue2
 
 		public string itemNo;
-		public string itemType; // TODO : change item.itemType 
+		public string type; // TODO : change item.itemType 
 		public bool isMelee;
 		public string feature;
 		public int itemHP;
